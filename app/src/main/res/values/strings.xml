@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">YunJunRui</string>
+    <string name="app_name">云君瑞</string>
+     <string name="app_compang">深圳市云君瑞科技有限公司 </string>
+    <string name="discover">发现</string>
+    <string name="device">设备</string>
+    <string name="me">我的</string>
+    <string name="loading">正在加载</string>
+    <string name="loading_fail">加载失败，点击重试</string>
+    <string name="loading_emptydata">设备为空，请点击添加设备</string>
 </resources>
