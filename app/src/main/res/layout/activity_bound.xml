@@ -52,7 +52,7 @@
         android:textSize="22sp"
         android:textColor="@color/white"
         android:text="绑定"
-        android:background="@color/button_sure"
+        android:background="@drawable/btn_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
