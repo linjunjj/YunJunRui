@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_backgorund"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_color"
+        android:fitsSystemWindows="true"
+        app:popupTheme="@style/AppTheme.Base"
+        app:layout_scrollFlags="scroll|enterAlways">
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_marginRight="15dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="right"
+            android:textSize="16sp"
+            android:textColor="@color/button_sure"
+            android:text="取消"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_s"
+            android:textColorHint="#929389"
+            android:text="绑定平台地址"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textColor="@color/textColor1"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_marginTop="22dp"
+    android:layout_marginBottom="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+        android:hint="请输入云君瑞平台地址"
+        android:id="@+id/ed_address"
+        android:background="@drawable/editshape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_band"
+        android:layout_marginTop="22dp"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:text="绑定"
+        android:background="@color/button_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+</LinearLayout>

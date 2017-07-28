@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#F4F4F4"
+        android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/fra_tfff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:layout_marginTop="3dp"
+                android:id="@+id/group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rb_video"
+                    android:text="摄像头设备"
+                    style="@style/RadioBtn" />
+
+                <RadioButton
+                    android:id="@+id/rb_gsm"
+                    android:text="GSM网络设备"
+                    style="@style/RadioBtn"/>
+            </RadioGroup>
+            <ImageView
+                android:id="@+id/line"
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:background="@drawable/underline"/>
+        </FrameLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v4.view.ViewPager>
+
+    </LinearLayout>
+
+

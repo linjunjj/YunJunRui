@@ -66,5 +66,4 @@
             android:drawableTop="@drawable/me_seletor"
             android:text="@string/me" />
     </RadioGroup>
-
 </RelativeLayout>

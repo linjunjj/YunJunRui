@@ -67,12 +67,16 @@ public class DeviceFragment extends BaseFragment {
                 .setOnMenuItemClickListener(new TopRightMenu.OnMenuItemClickListener() {
                     @Override
                     public void onMenuItemClick(int position) {
+                       switch (position){
+                           case 0:
+                               break;
+                           case 1:
+                               break;
 
+                       }
                     }
                 });
                // .showAsDropDown(topRightMenu, -225, 0);
 //                        .showAsDropDown(moreBtn);
     }
-
-
 }
