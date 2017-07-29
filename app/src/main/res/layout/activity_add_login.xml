@@ -57,18 +57,62 @@
 
   </LinearLayout>
 
-<LinearLayout
-    android:layout_margin="8dp"
+<RelativeLayout
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="8dp"
+   android:layout_marginLeft="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RadioButton
+        android:layout_centerVertical="true"
+        android:button="@null"
+        android:background="@drawable/rbtn_selester"
         android:textSize="9sp"
+        android:id="@+id/rbtn"
         android:textColor="@color/tbreak"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+    <TextView
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@+id/rbtn"
+        android:textColor="@color/textColor1"
+        android:textSize="15sp"
         android:text="记住密码"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</LinearLayout>
+    <TextView
+     android:layout_centerVertical="true"
+    android:textColor="@color/text_color_bule"
+    android:textSize="16sp"
+    android:text="忘记密码"
+        android:layout_alignParentRight="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+</RelativeLayout>
 
+    <Button
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/btn_suer"
+        android:layout_marginTop="30dp"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:text="添加"
+        android:background="@drawable/btn_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/btn_register"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:textColor="@color/button_sure"
+        android:text="注册新账户"
+        android:background="@drawable/btn_shape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

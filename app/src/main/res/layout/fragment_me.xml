@@ -68,8 +68,8 @@
 
             <ImageView
                 android:id="@+id/im"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                android:layout_marginRight="10dp"
@@ -95,13 +95,17 @@
                 android:textColor="#424242"/>
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:src="@mipmap/right"/>
         </RelativeLayout>
+        <View
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
         <RelativeLayout
             android:clickable="true"
             android:layout_width="match_parent"
@@ -118,8 +122,8 @@
                 android:textSize="20sp"
                 android:textColor="#424242"/>
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
@@ -150,6 +154,10 @@
                 android:layout_marginRight="10dp"
                />
         </RelativeLayout>
+        <View
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
         <RelativeLayout
             android:clickable="true"
             android:layout_width="match_parent"
@@ -190,13 +198,17 @@
             android:textSize="20sp"
             android:textColor="#424242"/>
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:src="@mipmap/right"/>
     </RelativeLayout>
+        <View
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
         <RelativeLayout
             android:clickable="true"
             android:layout_width="match_parent"
@@ -213,8 +225,8 @@
                 android:textSize="20sp"
                 android:textColor="#424242"/>
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
