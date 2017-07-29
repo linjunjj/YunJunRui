@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_backgorund"
+    xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_color"
+        android:fitsSystemWindows="true"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.Base">
+
+        <ImageView
+            android:id="@+id/iv_oneback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:text="添加账号"
+            android:id="@+id/tv_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textColor="@color/textColor1"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+  <LinearLayout
+      android:layout_marginTop="30dp"
+      android:orientation="vertical"
+      android:background="#ffffff"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+          android:hint="请输入账号"
+          android:layout_marginBottom="5dp"
+          android:background="@drawable/editshape"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+      <View
+          android:background="@color/line"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"></View>
+      <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+          android:layout_marginTop="5dp"
+          android:hint="请输入密码"
+          android:inputType="textPassword"
+          android:background="@drawable/editshape"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+  </LinearLayout>
+
+<LinearLayout
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RadioButton
+        android:textSize="9sp"
+        android:textColor="@color/tbreak"
+        android:text="记住密码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+
+</LinearLayout>

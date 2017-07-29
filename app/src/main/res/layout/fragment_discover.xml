@@ -1,6 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui"
+    android:background="@color/main_backgorund"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/dis_logo"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+         <TextView
+             android:layout_marginLeft="10dp"
+             android:layout_centerVertical="true"
+             android:gravity="center"
+             android:textStyle="bold"
+             android:layout_toRightOf="@+id/dis_logo"
+       android:text="深圳市云君瑞科技有限公司"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <com.zhouwei.mzbanner.MZBannerView
+        android:background="@color/white"
+        android:id="@+id/banner"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="4dp"
+        app:open_mz_mode="true"
+        app:canLoop="true"
+        app:indicatorAlign="center"
+        app:indicatorPaddingLeft="10dp"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="25dp"
+       android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/main_backgorund"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <ImageView
+     android:src="@mipmap/coupon"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content" />
+
+  <TextView
+      android:layout_gravity="center"
+      android:layout_marginLeft="20dp"
+      android:textSize="15sp"
+      android:textColor="#494949"
+      android:textStyle="normal"
+      android:text="优惠活动"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+
+        <TextView
+              android:layout_marginLeft="210dp"
+           android:layout_gravity="center"
+            android:textColor="@color/button_sure"
+            android:textSize="15sp"
+            android:text="详情"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <View
+        android:background="@color/tbreak"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"></View>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+      <LinearLayout
+          android:layout_marginLeft="20dp"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+          <TextView
+
+              android:textStyle="normal"
+              android:textColor="#000000"
+              android:textSize="20sp"
+              android:text="手机搭配66666"
+              android:id="@+id/gaogao"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+
+          <TextView
+              android:layout_marginTop="9dp"
+              android:textColor="@color/tbreak"
+              android:textSize="9sp"
+              android:text="￥997特惠"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+      </LinearLayout>
+
+        <View
+            android:layout_gravity="center"
+            android:layout_width="1dp"
+            android:background="#BEBEBE"
+            android:layout_height="80dp"></View>
+        <LinearLayout
+            android:layout_marginLeft="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="normal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:text="手机搭配66666"
+                android:id="@+id/gaoo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="9dp"
+                android:textColor="@color/tbreak"
+                android:textSize="9sp"
+                android:text="￥997特惠"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <view
+        android:background="#BEBEBE"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></view>
 
 </LinearLayout>

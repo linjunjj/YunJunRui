@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.linjun.yunjunrui"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -40,4 +40,5 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-3.0.0.jar')
     compile files('libs/ShareSDK-Wechat-Core-3.0.0.jar')
     compile files('libs/ShareSDK-Wechat-Moments-3.0.0.jar')
+    compile 'com.github.pinguo-zhouwei:MZBannerView:v1.0.1'
 }
