@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_backgorund"
+    xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_color"
+        android:fitsSystemWindows="true"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.Base">
+        <ImageView
+            android:id="@+id/iv_gsmparback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:text="设备详情"
+            android:id="@+id/tv_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textColor="@color/textColor1"
+            android:textSize="20sp" />
+
+    </android.support.v7.widget.Toolbar>
+<RelativeLayout
+    android:layout_marginTop="20dp"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+ <ImageView
+     android:id="@+id/devide_icon"
+     android:layout_margin="8dp"
+     android:src="@mipmap/video_on"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content" />
+<TextView
+    android:id="@+id/device_title"
+    android:layout_marginTop="5dp"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    android:text="ADASDFSDF"
+    android:layout_marginLeft="4dp"
+    android:layout_toRightOf="@+id/devide_icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textStyle="normal"
+        android:textSize="10sp"
+        android:text="beizhu"
+        android:layout_toRightOf="@+id/devide_icon"
+        android:layout_below="@+id/device_title"
+        android:layout_marginLeft="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginRight="10dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/iv_set"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/right" />
+</RelativeLayout>
+
+    <Button
+        android:layout_below="@+id/bowwn"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/btn_delete"
+        android:layout_marginTop="30dp"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:text="删除主机"
+        android:background="@drawable/button_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

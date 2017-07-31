@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:text="添加GSM网络设备"
+            android:text="添加视频设备"
             android:textColor="@color/textColor1"
             android:textSize="20sp" />
     </android.support.v7.widget.Toolbar>
@@ -75,7 +75,7 @@
             android:textSize="22sp"
             android:textColor="@color/white"
             android:text="添加"
-            android:background="@drawable/btn_background"
+            android:background="@drawable/button_selector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

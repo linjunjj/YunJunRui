@@ -34,6 +34,17 @@
         </activity>
         <activity android:name=".ui.main.MainActivity"></activity>
         <activity android:name=".ui.splash.SplashAcivity1"></activity>
+        <activity android:name=".ui.me.activity.ActivityAbout"></activity>
+        <activity android:name=".ui.login.activity.ActivityLogin"></activity>
+        <activity android:name=".ui.me.activity.ActivityGuide"></activity>
+        <activity android:name=".ui.login.activity.ActivityRegister"></activity>
+        <activity android:name=".ui.me.activity.ActivityAcount"></activity>
+        <activity android:name=".ui.me.activity.ActivityAddAcount"></activity>
+        <activity android:name=".ui.me.activity.ActivityIdea"></activity>
+        <activity android:name=".ui.me.activity.ActivityFindPsw1"></activity>
+        <activity android:name=".ui.me.activity.ActivityContact"></activity>
+        <activity android:name=".ui.me.activity.ActivityFindPsw"></activity>
+
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"

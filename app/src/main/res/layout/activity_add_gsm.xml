@@ -15,7 +15,7 @@
         app:popupTheme="@style/AppTheme.Base">
 
         <ImageView
-            android:id="@+id/iv_oneback"
+            android:id="@+id/iv_gsmback"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:scaleType="centerInside"
@@ -70,12 +70,12 @@
 
 
         <Button
-            android:id="@+id/btn_add_video"
+            android:id="@+id/btn_add_gsm"
             android:layout_marginTop="22dp"
             android:textSize="22sp"
             android:textColor="@color/white"
             android:text="添加"
-            android:background="@drawable/btn_background"
+            android:background="@drawable/button_selector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

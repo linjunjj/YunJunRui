@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import com.linjun.yunjunrui.event.BusManager;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 作者：林俊 on 2017/7/26
@@ -19,13 +20,14 @@ import butterknife.ButterKnife;
 public  abstract class BaseActivity extends AppCompatActivity {
    protected abstract  int getLayoutId();
     protected abstract  void initView();
+    private Unbinder unbinder;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         fullScreen();
         setContentView(getLayoutId());
-        ButterKnife.bind(this);
+       unbinder=ButterKnife.bind(this);
         initView();
         bindEvent();
         if (isRegisterEvent()){
@@ -50,4 +52,9 @@ public  abstract class BaseActivity extends AppCompatActivity {
 
     protected   abstract  void bindEvent();
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
+    }
 }

@@ -14,4 +14,7 @@
     <color name="line">#f5f5f5f5</color>
     <color name="text_color_bule">#614BEE</color>
     <color name="text">#888888</color>
+    <color name="chengs">#a44100</color>
+    <drawable name="clr_normal">#fe8b55</drawable>
+    <drawable name="clr_pressed">#a44100</drawable>
 </resources>

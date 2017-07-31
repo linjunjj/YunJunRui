@@ -15,7 +15,7 @@
         app:popupTheme="@style/AppTheme.Base">
 
         <ImageView
-            android:id="@+id/iv_oneback"
+            android:id="@+id/iv_acountback"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:scaleType="centerInside"
@@ -37,12 +37,13 @@
             android:layout_marginRight="10dp"
             android:layout_centerInParent="true"
             android:layout_gravity="right"
-            android:id="@+id/iv_set"
+            android:id="@+id/iv_logout"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content" />
     </android.support.v7.widget.Toolbar>
 
     <Button
+        android:id="@+id/btn_add"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"
         android:background="@drawable/btn_shape"

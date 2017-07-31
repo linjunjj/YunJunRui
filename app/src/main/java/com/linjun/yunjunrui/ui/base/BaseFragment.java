@@ -11,6 +11,9 @@ import android.widget.FrameLayout;
 
 import com.linjun.yunjunrui.R;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * 作者：林俊 on 2017/7/27
  * 作用：Fragment基类
@@ -23,12 +26,12 @@ public abstract class BaseFragment extends Fragment {
     public static final int STATE_SUCCESS = 4;
     public int mCurState;
     protected static FragmentActivity mContext;
-
     public FrameLayout frameLayout;
     private View errPageView;
     private View loadingPageView;
     private View emptyPageView;
-
+    private View rootview;
+      private  Unbinder unbinder;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,7 +39,6 @@ public abstract class BaseFragment extends Fragment {
         showLoadingState();
         return frameLayout;
     }
-
     private void init() {
         mContext = getActivity();
         frameLayout = new FrameLayout(getActivity());
@@ -54,7 +56,6 @@ public abstract class BaseFragment extends Fragment {
 
         Button bt = ((Button) errPageView.findViewById(R.id.bt_reload));
         bt.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 // 重新加载
@@ -77,6 +78,9 @@ public abstract class BaseFragment extends Fragment {
         loadingPageView.setVisibility(mCurState == STATE_UNKNOWN
                 || mCurState == STATE_LOADING ? View.VISIBLE : View.INVISIBLE);
         if (mCurState == STATE_SUCCESS) {
+            rootview=View.inflate(getActivity(),getLayoutResId(),null);
+            unbinder=ButterKnife.bind(this,rootview);
+            frameLayout.addView(rootview);
             showPage();
         }
     }
@@ -85,12 +89,15 @@ public abstract class BaseFragment extends Fragment {
      * 如果要显示加载完成页面必须将mCurState设置为STATE_SUCCESS
      */
     public abstract void requestData();
-
     /**
      * 如果STATE_SUCCESS加载成功将会调用此方法用于显示加载成功后的页面
      */
     public abstract void showPage();
+    public abstract int getLayoutResId();
 
-
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
+    }
 }

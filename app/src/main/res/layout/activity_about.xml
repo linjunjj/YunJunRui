@@ -6,7 +6,6 @@
     android:background="@color/main_backgorund"
     xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/toolbar_color"
@@ -14,7 +13,7 @@
         app:layout_scrollFlags="scroll|enterAlways"
         app:popupTheme="@style/AppTheme.Base">
         <ImageView
-            android:id="@+id/iv_oneback"
+            android:id="@+id/iv_aboutback"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:scaleType="centerInside"
@@ -66,6 +65,7 @@
           android:layout_height="wrap_content">
 
           <RelativeLayout
+              android:id="@+id/r_guide"
               android:clickable="true"
               android:layout_width="match_parent"
               android:layout_height="45dp"
@@ -93,6 +93,7 @@
               android:layout_width="match_parent"
               android:layout_height="1dp"></View>
           <RelativeLayout
+              android:id="@+id/r_idea"
               android:clickable="true"
               android:layout_width="match_parent"
               android:layout_height="45dp"
@@ -120,6 +121,7 @@
               android:layout_width="match_parent"
               android:layout_height="1dp"></View>
           <RelativeLayout
+              android:id="@+id/r_contact"
               android:clickable="true"
               android:layout_width="match_parent"
               android:layout_height="45dp"

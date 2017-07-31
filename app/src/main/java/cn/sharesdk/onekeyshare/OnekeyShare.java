@@ -10,6 +10,7 @@ package cn.sharesdk.onekeyshare;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -75,8 +76,9 @@ public class OnekeyShare {
 		}
 	}
 
-	/** imageUrl是图片的网络路径，新浪微博、人人网、QQ空间和Linked-In支持此字段 */
-	public void setImageUrl(String imageUrl) {
+	/** imageUrl是图片的网络路径，新浪微博、人人网、QQ空间和Linked-In支持此字段
+     * @param imageUrl*/
+	public void setImageUrl(Drawable imageUrl) {
 		if (!TextUtils.isEmpty(imageUrl)) {
 			params.put("imageUrl", imageUrl);
 		}
