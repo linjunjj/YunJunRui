@@ -1,7 +1,6 @@
 package com.linjun.yunjunrui.ui.device.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
@@ -11,11 +10,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseFragment;
@@ -31,6 +30,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+
 
 /**
  * 作者：林俊 on 2017/7/27
@@ -49,6 +49,13 @@ public class DeviceFragment extends BaseFragment {
     FrameLayout fraTfff;
     @BindView(R.id.vp)
     ViewPager vp;
+    @BindView(R.id.iv_refresh)
+    ImageView ivRefresh;
+    @BindView(R.id.main_text)
+    TextView mainText;
+    @BindView(R.id.iv_set)
+    ImageView ivSet;
+    Unbinder unbinder;
     private View view;
     private Toolbar toolbar;
     private TopRightMenu topRightMenu;
@@ -58,54 +65,30 @@ public class DeviceFragment extends BaseFragment {
     public void requestData() {
         mCurState = STATE_SUCCESS;
     }
+
     @Override
     public void showPage() {
-        toolbar = getActivity().findViewById(R.id.toolbar);
-        fragments=new ArrayList<>();
+        fragments = new ArrayList<>();
         fragments.add(new GsmFragment());
         fragments.add(new VideoFragment());
-        vp.setAdapter(new OneFragmentPagerAdapter(getChildFragmentManager(),fragments));
+        vp.setAdapter(new OneFragmentPagerAdapter(getChildFragmentManager(), fragments));
         vp.setOnPageChangeListener(new PageChangeListener());
         vp.setCurrentItem(0);
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup radioGroup,  int i) {
-               switch (i){
-                   case R.id.rb_video:
-                       vp.setCurrentItem(1);
-                       break;
-                   case R.id.rb_gsm:
-                       vp.setCurrentItem(0);
-                       break;
-               }
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.rb_video:
+                        vp.setCurrentItem(1);
+                        break;
+                    case R.id.rb_gsm:
+                        vp.setCurrentItem(0);
+                        break;
+                }
             }
         });
-
+        frameLayout.addView(view);
     }
-
-    @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_device;
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.device_item, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItemClickListener() {
-        @Override
-        public boolean onMenuItemClick(MenuItem menuItem) {
-
-            switch (menuItem.getItemId()) {
-                case R.id.action_add:
-                    openItem();
-                    break;
-            }
-            return true;
-        }
-    };
 
     private void openItem() {
         topRightMenu = new TopRightMenu(getActivity());
@@ -125,8 +108,10 @@ public class DeviceFragment extends BaseFragment {
                     public void onMenuItemClick(int position) {
                         switch (position) {
                             case 0:
+
                                 break;
                             case 1:
+
                                 break;
 
                         }
@@ -137,26 +122,20 @@ public class DeviceFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.group, R.id.line, R.id.vp})
+    @OnClick({R.id.iv_refresh, R.id.iv_set})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.group:
-
-
+            case R.id.iv_refresh:
                 break;
-            case R.id.line:
-                break;
-            case R.id.vp:
+            case R.id.iv_set:
+                openItem();
                 break;
         }
     }
 
 
-
     public class PageChangeListener implements ViewPager.OnPageChangeListener {
-
         private int currentPage;
-
         @Override
         public void onPageScrolled(int i, float v, int i1) {
             int width = group.getWidth() / group.getChildCount();

@@ -12,11 +12,7 @@
         android:background="@color/text_color_chengse"
         android:layout_width="match_parent"
         android:layout_height="150dp">
-        <com.linjun.yunjunrui.view.WareView
-            android:id="@+id/wareview"
-            android:layout_gravity="bottom"
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
+
         <LinearLayout
             android:layout_gravity="center"
             android:id="@+id/header"
@@ -203,6 +199,7 @@
             android:textSize="20sp"
             android:textColor="#424242"/>
             <ImageView
+                android:id="@+id/icon"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_alignParentRight="true"

@@ -79,7 +79,7 @@ public class OnekeyShare {
 	/** imageUrl是图片的网络路径，新浪微博、人人网、QQ空间和Linked-In支持此字段
      * @param imageUrl*/
 	public void setImageUrl(Drawable imageUrl) {
-		if (!TextUtils.isEmpty(imageUrl)) {
+		if (!TextUtils.isEmpty((CharSequence) imageUrl)) {
 			params.put("imageUrl", imageUrl);
 		}
 	}

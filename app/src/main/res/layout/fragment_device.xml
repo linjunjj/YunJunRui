@@ -1,11 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <LinearLayout
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#307AEE"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="#F4F4F4"
-        android:orientation="vertical">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_color"
+        android:fitsSystemWindows="true"
+        app:popupTheme="@style/AppTheme.Base"
+        app:layout_scrollFlags="scroll|enterAlways"
+        tools:targetApi="lollipop" >
+
+        <ImageView
+            android:id="@+id/iv_refresh"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+           android:background="@drawable/refreshsele" />
+
+        <TextView
+            android:id="@+id/main_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textColor="@color/textColor1"
+            android:textSize="20sp" />
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="right"
+            android:id="@+id/iv_set"
+            android:layout_width="40dp"
+            android:background="@drawable/add_selector"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+           />
+
+    </android.support.v7.widget.Toolbar>
         <FrameLayout
             android:id="@+id/fra_tfff"
             android:layout_width="match_parent"
@@ -33,12 +71,12 @@
                 android:layout_height="3dp"
                 android:background="@drawable/underline"/>
         </FrameLayout>
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </android.support.v4.view.ViewPager>
 
-    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+
+</LinearLayout>
 
 

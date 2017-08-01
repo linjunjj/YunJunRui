@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
@@ -20,6 +21,8 @@ import com.linjun.yunjunrui.ui.me.fragment.MeFragment;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 作者：林俊 on 2017/7/27
@@ -27,17 +30,18 @@ import butterknife.BindView;
  */
 public class MainActivity extends BaseActivity {
 
-
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
     @BindView(R.id.fl_container)
     FrameLayout flContainer;
     @BindView(R.id.rgTabBar)
     RadioGroup rgMain;
-    @BindView(R.id.main_text)
-    TextView mainText;
+    @BindView(R.id.device)
+    RadioButton device;
+    @BindView(R.id.discover)
+    RadioButton discover;
+    @BindView(R.id.me)
+    RadioButton me;
     private int position = 0;
-    private ArrayList<BaseFragment> fragments;
+    private ArrayList<Fragment> fragments;
     private Fragment tempFragemnt;
     private String[] datas = {"设备", "发现", "我的"};
 
@@ -45,9 +49,9 @@ public class MainActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
+
     @Override
     protected void initView() {
-        mainText.setText(datas[position]);
         initFragment();
         initListener();
     }
@@ -70,28 +74,29 @@ public class MainActivity extends BaseActivity {
                         position = 0;
                         break;
                 }
-                BaseFragment baseFragment = getFragment(position);
+              Fragment baseFragment = getFragment(position);
                 switchFragment(tempFragemnt, baseFragment);
             }
         });
         rgMain.check(R.id.device);
     }
+
     private void initFragment() {
         fragments = new ArrayList<>();
-        fragments.add(new DeviceFragment());
+        fragments.add(new MeFragment());
         fragments.add(new DiscoverFragment());
         fragments.add(new MeFragment());
     }
 
-    private BaseFragment getFragment(int position) {
+    private Fragment getFragment(int position) {
         if (fragments != null && fragments.size() > 0) {
-            BaseFragment baseFragment = fragments.get(position);
+            Fragment baseFragment = fragments.get(position);
             return baseFragment;
         }
         return null;
     }
 
-    private void switchFragment(Fragment fromFragment, BaseFragment nextFragment) {
+    private void switchFragment(Fragment fromFragment, Fragment nextFragment) {
         if (tempFragemnt != nextFragment) {
             tempFragemnt = nextFragment;
             if (nextFragment != null) {
@@ -103,6 +108,7 @@ public class MainActivity extends BaseActivity {
                         transaction.hide(fromFragment);
                     }
                     //添加Fragment
+
                     transaction.add(R.id.fl_container, nextFragment).commit();
                 } else {
                     //隐藏当前Fragment
@@ -119,5 +125,4 @@ public class MainActivity extends BaseActivity {
     protected void bindEvent() {
 
     }
-
 }

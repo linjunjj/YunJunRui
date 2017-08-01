@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/main_backgorund"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
     android:orientation="vertical">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/toolbar_color"
-        android:fitsSystemWindows="true"
-        app:popupTheme="@style/AppTheme.Base"
-        app:layout_scrollFlags="scroll|enterAlways"
-        tools:targetApi="lollipop" >
-        <TextView
-            android:id="@+id/main_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:textColor="@color/textColor1"
-            android:textSize="20sp" />
-    </android.support.v7.widget.Toolbar>
     <FrameLayout
+        android:background="#B4EEE9"
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:id="@+id/fl_container"
@@ -53,17 +35,15 @@
             android:drawableTop="@drawable/device_selector"
             android:text="@string/device"
             />
-
         <RadioButton
             android:id="@+id/discover"
             style="@style/TabButton"
             android:drawableTop="@drawable/discover_selector"
             android:text="@string/discover"/>
-
         <RadioButton
             android:id="@+id/me"
             style="@style/TabButton"
             android:drawableTop="@drawable/me_seletor"
             android:text="@string/me" />
     </RadioGroup>
-</RelativeLayout>
+</LinearLayout>

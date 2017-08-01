@@ -1,6 +1,8 @@
 package com.linjun.yunjunrui.ui.device.fragment;
 
-import com.linjun.yunjunrui.R;
+import android.view.View;
+
+
 import com.linjun.yunjunrui.ui.base.BaseFragment;
 
 /**
@@ -8,9 +10,10 @@ import com.linjun.yunjunrui.ui.base.BaseFragment;
  * 作用：
  */
 public class VideoFragment extends BaseFragment {
+    private View view;
     @Override
     public void requestData() {
-
+        mCurState = STATE_SUCCESS;
     }
 
     @Override
@@ -18,8 +21,7 @@ public class VideoFragment extends BaseFragment {
 
     }
 
-    @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_video;
-    }
+
+
+
 }

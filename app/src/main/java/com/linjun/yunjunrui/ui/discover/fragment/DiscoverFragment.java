@@ -10,10 +10,10 @@ import com.linjun.yunjunrui.ui.base.BaseFragment;
  * 作用：发现操作类
  */
 public class DiscoverFragment extends BaseFragment {
-
+    private  View view;
     @Override
     public void requestData() {
-      mCurState=-STATE_SUCCESS;
+      mCurState=STATE_SUCCESS;
     }
 
     @Override
@@ -21,8 +21,5 @@ public class DiscoverFragment extends BaseFragment {
 
     }
 
-    @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_discover;
-    }
+
 }

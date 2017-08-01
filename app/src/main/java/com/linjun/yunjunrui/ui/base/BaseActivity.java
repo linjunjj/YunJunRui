@@ -22,7 +22,7 @@ public  abstract class BaseActivity extends AppCompatActivity {
     protected abstract  void initView();
     private Unbinder unbinder;
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         fullScreen();
@@ -47,8 +47,6 @@ public  abstract class BaseActivity extends AppCompatActivity {
     protected boolean isRegisterEvent(){
         return false;
     }
-
-
 
     protected   abstract  void bindEvent();
 
