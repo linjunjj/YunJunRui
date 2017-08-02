@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:orientation="vertical"
+   android:layout_gravity="center"
+    android:background="@drawable/editshape"
+    android:layout_height="170dp">
+<TextView
+    android:layout_marginTop="10dp"
+    android:textStyle="normal"
+    android:textSize="25sp"
+    android:layout_gravity="center"
+    android:text="温馨提示"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+    <View
+        android:background="@color/button_sure"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"></View>
+  <TextView
+
+      android:layout_marginTop="20dp"
+      android:layout_gravity="center"
+      android:text="是否退出云君瑞"
+      android:textSize="18sp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+    <View
+        android:layout_marginTop="24dp"
+        android:background="@color/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+<LinearLayout
+
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/sure"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:textColor="@drawable/buleselecter"
+        android:text="确定"
+        android:background="@null"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <View
+        android:background="@color/line"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"></View>
+
+    <TextView
+        android:id="@+id/cancel"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:textColor="@drawable/buleselecter"
+        android:text="取消"
+        android:background="@null"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+
+</LinearLayout>

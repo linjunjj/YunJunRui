@@ -44,7 +44,10 @@
         <activity android:name=".ui.me.activity.ActivityFindPsw1"></activity>
         <activity android:name=".ui.me.activity.ActivityContact"></activity>
         <activity android:name=".ui.me.activity.ActivityFindPsw"></activity>
-
+       <activity android:name=".ui.device.activity.ActivityAddGsm"></activity>
+        <activity android:name=".ui.device.activity.ActivityAddVideo"></activity>
+        <activity android:name=".ui.device.activity.ActivityGsmDetail"></activity>
+        <activity android:name=".ui.device.activity.ActivityGsmParticular"></activity>
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"

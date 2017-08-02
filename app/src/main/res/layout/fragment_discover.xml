@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#EE3A24"
+    android:background="@color/main_backgorund"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -26,7 +26,6 @@
     </android.support.v7.widget.Toolbar>
     <RelativeLayout
         android:gravity="center"
-        android:background="@color/white"
         android:layout_marginTop="4dp"
         android:layout_gravity="center"
         android:layout_marginRight="10dp"
@@ -64,7 +63,7 @@
         app:indicatorPaddingLeft="10dp"
         />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_marginTop="25dp"
        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -73,34 +72,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
       <ImageView
+          android:id="@+id/lodo"
      android:src="@mipmap/coupon"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content" />
 
   <TextView
+      android:layout_toRightOf="@+id/lodo"
       android:layout_gravity="center"
       android:layout_marginLeft="20dp"
       android:textSize="15sp"
+      android:layout_marginTop="4dp"
       android:textColor="#494949"
       android:textStyle="normal"
       android:text="优惠活动"
+      android:id="@+id/huod"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content" />
 
         <TextView
-              android:layout_marginLeft="210dp"
-           android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_alignParentRight="true"
             android:textColor="@color/button_sure"
             android:textSize="15sp"
             android:text="详情"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-    </LinearLayout>
+    </RelativeLayout>
     <View
-        android:background="@color/tbreak"
+        android:background="#BEBEBE"
         android:layout_width="match_parent"
-        android:layout_height="2dp"></View>
+        android:layout_height="1dp"></View>
 
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -130,7 +133,6 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content" />
       </LinearLayout>
-
         <View
             android:layout_gravity="center"
             android:layout_width="1dp"

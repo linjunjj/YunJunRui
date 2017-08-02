@@ -5,7 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#307AEE"
+    android:background="@color/main_backgorund"
     android:orientation="vertical">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -14,17 +14,19 @@
         android:background="@color/toolbar_color"
         android:fitsSystemWindows="true"
         app:popupTheme="@style/AppTheme.Base"
+        android:layout_marginBottom="2dp"
         app:layout_scrollFlags="scroll|enterAlways"
         tools:targetApi="lollipop" >
 
         <ImageView
+            android:layout_marginBottom="2dp"
             android:id="@+id/iv_refresh"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:scaleType="centerInside"
            android:background="@drawable/refreshsele" />
-
         <TextView
+            android:layout_marginBottom="2dp"
             android:id="@+id/main_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,17 +35,35 @@
             android:textColor="@color/textColor1"
             android:textSize="20sp" />
         <ImageView
+            android:layout_marginBottom="2dp"
             android:layout_marginRight="10dp"
             android:layout_centerInParent="true"
             android:layout_gravity="right"
-            android:id="@+id/iv_set"
-            android:layout_width="40dp"
+            android:id="@+id/iv_add"
+            android:layout_width="30dp"
             android:background="@drawable/add_selector"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:scaleType="centerInside"
            />
 
     </android.support.v7.widget.Toolbar>
+    <View
+        android:background="#BEBEBE"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/seach"
+            android:hint="搜索"
+            android:windowSoftInputMode="stateHidden"
+            android:background="@drawable/editsharp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
         <FrameLayout
             android:id="@+id/fra_tfff"
             android:layout_width="match_parent"
@@ -65,6 +85,10 @@
                     android:text="GSM网络设备"
                     style="@style/RadioBtn"/>
             </RadioGroup>
+            <View
+                android:background="#BEBEBE"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></View>
             <ImageView
                 android:id="@+id/line"
                 android:layout_width="40dp"

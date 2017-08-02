@@ -59,7 +59,13 @@ public class ActivityAddVideo extends BaseActivity {
                 this.finish();
                 break;
             case R.id.btn_add_video:
+
                 break;
         }
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

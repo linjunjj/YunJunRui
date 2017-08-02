@@ -22,4 +22,9 @@ public class ActivityGuide extends BaseActivity{
     protected void bindEvent() {
 
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

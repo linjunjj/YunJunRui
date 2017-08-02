@@ -69,4 +69,9 @@ public class ActivityFindPsw1 extends BaseActivity {
                 break;
         }
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

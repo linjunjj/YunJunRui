@@ -76,6 +76,7 @@ public class TRMenuAdapter extends RecyclerView.Adapter<TRMenuAdapter.TRMViewHol
                 if (onMenuItemClickListener != null) {
                     mTopRightMenu.dismiss();
                     onMenuItemClickListener.onMenuItemClick(pos);
+
                 }
             }
         });

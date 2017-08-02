@@ -1,28 +1,21 @@
 package com.linjun.yunjunrui.ui.main;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
-import com.linjun.yunjunrui.ui.base.BaseFragment;
 import com.linjun.yunjunrui.ui.device.fragment.DeviceFragment;
 import com.linjun.yunjunrui.ui.discover.fragment.DiscoverFragment;
 import com.linjun.yunjunrui.ui.me.fragment.MeFragment;
+import com.linjun.yunjunrui.view.Backdialog;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * 作者：林俊 on 2017/7/27
@@ -44,7 +37,7 @@ public class MainActivity extends BaseActivity {
     private ArrayList<Fragment> fragments;
     private Fragment tempFragemnt;
     private String[] datas = {"设备", "发现", "我的"};
-
+   private Backdialog backdialog;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
@@ -83,7 +76,7 @@ public class MainActivity extends BaseActivity {
 
     private void initFragment() {
         fragments = new ArrayList<>();
-        fragments.add(new MeFragment());
+        fragments.add(new DeviceFragment());
         fragments.add(new DiscoverFragment());
         fragments.add(new MeFragment());
     }
@@ -125,4 +118,24 @@ public class MainActivity extends BaseActivity {
     protected void bindEvent() {
 
     }
+
+    @Override
+    public void onBackPressed() {
+       // super.onBackPressed();
+      backdialog=new Backdialog(this);
+      backdialog.setYesOnclickListener(new Backdialog.onYesOnclickListener() {
+          @Override
+          public void onYesClick() {
+              finish();
+          }
+      });
+        backdialog.setNoOnclickListener(new Backdialog.onNoOnclickListener() {
+            @Override
+            public void onNoClick() {
+               backdialog.dismiss();
+            }
+        });
+        backdialog.show();
+    }
+
 }

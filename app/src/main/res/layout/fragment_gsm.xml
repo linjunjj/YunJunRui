@@ -3,24 +3,16 @@
     android:orientation="vertical"
     android:layout_marginRight="4dp"
     android:layout_marginLeft="4dp"
+    android:background="@color/main_backgorund"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_margin="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:hint="搜索"
-            android:background="@drawable/editsharp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+
     <com.dinuscxj.refresh.RecyclerRefreshLayout
         android:id="@+id/refresh_lgsm"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_gsm"
+            android:id="@+id/recycler_gsmrecycler_gsm"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.dinuscxj.refresh.RecyclerRefreshLayout>

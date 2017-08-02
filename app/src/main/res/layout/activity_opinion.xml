@@ -12,13 +12,15 @@
         android:background="@color/toolbar_color"
         android:fitsSystemWindows="true"
         app:layout_scrollFlags="scroll|enterAlways"
-        app:popupTheme="@style/AppTheme.Base">
+        app:popupTheme="@style/AppTheme.Base"
+        android:weightSum="1">
         <ImageView
             android:id="@+id/iv_ideaback"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:scaleType="centerInside"
-            android:src="@mipmap/back" />
+            android:src="@mipmap/back"
+            android:layout_weight="0.02" />
 
         <TextView
             android:text="建议反馈"

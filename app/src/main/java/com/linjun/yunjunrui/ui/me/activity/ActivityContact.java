@@ -37,4 +37,9 @@ public class ActivityContact extends BaseActivity {
     public void onViewClicked() {
         this.finish();
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

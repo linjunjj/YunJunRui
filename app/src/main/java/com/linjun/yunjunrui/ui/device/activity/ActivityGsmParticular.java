@@ -56,4 +56,9 @@ public class ActivityGsmParticular extends BaseActivity {
                 break;
         }
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
