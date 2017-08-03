@@ -21,14 +21,22 @@
             android:src="@mipmap/back" />
         <TextView
             android:text="注册"
-            android:id="@+id/tv_device_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:textColor="@color/textColor1"
             android:textSize="20sp" />
-
+        <TextView
+            android:text="通过邮箱注册"
+            android:layout_marginRight="10dp"
+            android:id="@+id/tv_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="right"
+            android:textColor="@color/button_sure"
+            android:textSize="16sp" />
     </android.support.v7.widget.Toolbar>
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_centerHorizontal="true"
@@ -39,6 +47,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp" />
     <LinearLayout
+        android:visibility="gone"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:id="@+id/header"
@@ -49,8 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.linjun.yunjunrui.view.EditTextWithDeleteButton
-            android:hint="手机号码（作为登入账号）"
-            android:id="@+id/user_account"
+            android:hint="用户名"
+            android:id="@+id/user_name1"
             android:layout_marginBottom="5dp"
             android:background="@drawable/editshape"
             android:layout_width="match_parent"
@@ -60,8 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"></View>
         <com.linjun.yunjunrui.view.EditTextWithDeleteButton
-            android:hint="邮箱"
-            android:id="@+id/user_email"
+            android:hint="手机号码"
+            android:id="@+id/user_tel"
             android:layout_marginBottom="5dp"
             android:background="@drawable/editshape"
             android:layout_width="match_parent"
@@ -109,32 +118,111 @@
             android:background="@drawable/editshape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <Button
-           android:layout_marginTop="10dp"
-            android:id="@+id/btn_next"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:textSize="22sp"
-            android:textColor="@color/white"
-            android:text="注册"
-            android:background="@drawable/button_selector"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:id="@+id/btn_register"
-            android:layout_marginTop="4dp"
-            android:textSize="22sp"
-            android:textColor="@drawable/btntext_selecter"
-            android:text="已有账号？立即登入"
-            android:background="@drawable/btn_shape"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
     </LinearLayout>
 
 
+    <LinearLayout
+        android:visibility="visible"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/header2"
+        android:layout_below="@+id/user_icon"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+            android:hint="用户名"
+            android:id="@+id/user_name"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/editshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+        <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+            android:hint="电子邮箱"
+            android:id="@+id/user_email"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/editshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
 
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+                android:hint="验证码"
+                android:layout_weight="3"
+                android:id="@+id/ed_auth_code1"
+                android:background="@drawable/editshape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/button_sure"
+                android:layout_weight="1"
+                android:text="获取验证码"
+                android:textSize="15sp"
+                android:id="@+id/get_auth_code1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <View
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+
+        <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+            android:layout_marginTop="5dp"
+            android:hint="请输入密码"
+            android:id="@+id/user_passworld1"
+            android:inputType="textPassword"
+            android:background="@drawable/editshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></LinearLayout>
+
+    <Button
+        android:id="@+id/btn_register1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_selector"
+        android:text="注册"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btn_login1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/btn_shape"
+        android:text="已有账号？立即登入"
+        android:textColor="@drawable/btntext_selecter"
+        android:textSize="22sp" />
 
 </LinearLayout>
+
+

@@ -16,6 +16,6 @@
     <color name="text">#888888</color>
     <color name="chengs">#a44100</color>
     <drawable name="clr_normal">#fe8b55</drawable>
-    <drawable name="clr_pressed">#a44100</drawable>
+    <drawable name="clr_pressed">#888888</drawable>
     <color name="toolbar_color">#f6f6f6f6</color>
 </resources>

@@ -84,6 +84,7 @@
             android:button="@null"
             android:background="@drawable/rbtn_selester"
             android:textSize="9sp"
+            android:checked="true"
             android:id="@+id/rbtn_remeber"
             android:textColor="@color/tbreak"
             android:layout_width="20dp"

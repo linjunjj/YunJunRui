@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/toolbar_color"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_color"
+        android:fitsSystemWindows="true"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.Base">
+
+
+        <ImageView
+           android:layout_marginRight="20dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="right"
+            android:id="@+id/iv_con_cancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/cancel" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/ap_con"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/backselecter"
+            android:layout_gravity="center"
+            android:src="@drawable/ap_up"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="AP直连"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/local_con"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/backselecter"
+            android:layout_gravity="center"
+            android:src="@drawable/local_up"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="本地连接"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/inten_con"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/backselecter"
+            android:layout_gravity="center"
+            android:src="@drawable/intel_up"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="网络连接"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

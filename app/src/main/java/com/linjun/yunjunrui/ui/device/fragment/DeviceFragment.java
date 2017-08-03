@@ -23,6 +23,7 @@ import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseFragment;
 import com.linjun.yunjunrui.ui.device.activity.ActivityAddGsm;
 import com.linjun.yunjunrui.ui.device.activity.ActivityAddVideo;
+import com.linjun.yunjunrui.ui.device.activity.ActivityConType;
 import com.linjun.yunjunrui.ui.device.adapter.OneFragmentPagerAdapter;
 import com.linjun.yunjunrui.ui.device.entry.MenuItems;
 import com.linjun.yunjunrui.ui.device.entry.TopRightMenu;
@@ -106,10 +107,10 @@ public class DeviceFragment extends BaseFragment implements View.OnClickListener
                     public void onMenuItemClick(int position) {
                         switch (position) {
                             case 0:
-                                ActionUtils.actionStart(getActivity(), ActivityAddVideo.class);
+                                ActionUtils.actionStart(getActivity(), ActivityConType.class);
                                 break;
                             case 1:
-                              ActionUtils.actionStart(getActivity(), ActivityAddGsm.class);
+                              ActionUtils.actionStart(getActivity(), ActivityConType.class);
                                 break;
 
                         }

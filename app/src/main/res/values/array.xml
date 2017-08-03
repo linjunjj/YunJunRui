@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="record_type">
+        <item >A</item>
+        <item >M</item>
+        <item >R</item>   <!-- 特殊字符要转义-->
+        <item> H</item>
+        <item> K</item>
+    </string-array>
+    <string-array name="pic_type">
+        <item >A</item>
+        <item >M</item>
+        <item >R</item>   <!-- 特殊字符要转义-->
+        <item> H</item>
+        <item> K</item>
+        <item> B</item>
+        <item> L</item>
+    </string-array>
+</resources>

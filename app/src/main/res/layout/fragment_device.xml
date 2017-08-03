@@ -2,6 +2,8 @@
 
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="true"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/com.linjun.yunjunrui"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,14 +21,12 @@
         tools:targetApi="lollipop" >
 
         <ImageView
-            android:layout_marginBottom="2dp"
             android:id="@+id/iv_refresh"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:scaleType="centerInside"
            android:background="@drawable/refreshsele" />
         <TextView
-            android:layout_marginBottom="2dp"
             android:id="@+id/main_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +35,6 @@
             android:textColor="@color/textColor1"
             android:textSize="20sp" />
         <ImageView
-            android:layout_marginBottom="2dp"
             android:layout_marginRight="10dp"
             android:layout_centerInParent="true"
             android:layout_gravity="right"
@@ -45,7 +44,6 @@
             android:layout_height="30dp"
             android:scaleType="centerInside"
            />
-
     </android.support.v7.widget.Toolbar>
     <View
         android:background="#BEBEBE"

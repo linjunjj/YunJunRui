@@ -21,7 +21,7 @@
             android:src="@mipmap/back" />
 
         <TextView
-            android:text="添加视频设备"
+            android:text="视频设备"
             android:id="@+id/tv_device_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,5 +39,19 @@
             android:scaleType="centerInside"
             android:src="@mipmap/seting" />
     </android.support.v7.widget.Toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </LinearLayout>
