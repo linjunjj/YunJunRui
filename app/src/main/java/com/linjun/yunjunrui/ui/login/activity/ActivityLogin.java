@@ -10,11 +10,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lib.funsdk.support.FunSupport;
+import com.lib.funsdk.support.OnFunLoginListener;
+import com.lib.funsdk.support.models.FunLoginType;
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
 import com.linjun.yunjunrui.utils.ActionUtils;
 import com.linjun.yunjunrui.utils.ValidationUtil;
 import com.linjun.yunjunrui.view.EditTextWithDeleteButton;
+import com.throrinstudio.android.common.libs.validator.Form;
+import com.throrinstudio.android.common.libs.validator.Validate;
+import com.throrinstudio.android.common.libs.validator.validator.NotEmptyValidator;
+import com.vise.xsnow.cache.SpCache;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -24,7 +31,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * 作者：林俊 on 2017/7/31
  * 作用：
  */
-public class ActivityLogin extends BaseActivity {
+public class ActivityLogin extends BaseActivity implements OnFunLoginListener {
     @BindView(R.id.iv_loginback)
     ImageView ivLoginback;
     @BindView(R.id.tv_device_name)
@@ -47,7 +54,9 @@ public class ActivityLogin extends BaseActivity {
     Button btnLogin;
     @BindView(R.id.user_register)
     Button userRegister;
+    private SpCache spCache;
       private  boolean isCheck=true;
+    private Form form;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_login;
@@ -55,14 +64,30 @@ public class ActivityLogin extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        FunSupport.getInstance().setLoginType(FunLoginType.LOGIN_BY_INTENTT);
+        FunSupport.getInstance().registerOnFunLoginListener(this);
+        spCache=new SpCache(this);
     }
-
     @Override
     protected void bindEvent() {
-
+    }
+private void  tryLogin(){
+    String username=userAccount.getText().toString().trim();
+    String userpsd=userPassworld.getText().toString().trim();
+    if (null==username||username.length()==0){
+        Toast.makeText(this,"用户名不能为空",Toast.LENGTH_SHORT).show();
+    }else if (null==userpsd||userpsd.length()==0){
+        Toast.makeText(this,"密码不能为空",Toast.LENGTH_SHORT).show();
+    }else {
+        if ( !FunSupport.getInstance().login(username, userpsd) ) {
+           Toast.makeText(this,"登入失败",Toast.LENGTH_SHORT).show();
+        }else {
+            spCache.put("username",username);
+            spCache.put("userpsd",userpsd);
+        }
     }
 
+}
 
     @OnClick({R.id.iv_loginback, R.id.rbtn_remeber, R.id.btn_login, R.id.user_register})
     public void onViewClicked(View view) {
@@ -80,21 +105,58 @@ public class ActivityLogin extends BaseActivity {
                 }
                 break;
             case R.id.btn_login:
-                if (ValidationUtil.IsEmpty(this,userAccount)){
-                    if (ValidationUtil.IsPhoneMumber(this,userAccount)&&ValidationUtil.IsEmpty(this,userPassworld)){
-
-
+                    if (validator()){
+                        tryLogin();
                     }else {
-                        Toast.makeText(this,"账号格式不正确",Toast.LENGTH_SHORT).show();
+                       Toast.makeText(this,"请输入正确的数据",Toast.LENGTH_SHORT).show();
                     }
-                }else {
-                    Toast.makeText(this,"账号不能为空",Toast.LENGTH_SHORT).show();
-                }
+
+//                if (!ValidationUtil.IsEmpty(this,userAccount)){
+//                    if (ValidationUtil.IsPhoneMumber(this,userAccount)&&ValidationUtil.IsEmpty(this,userPassworld)){
+//                        tryLogin();
+//                    }else {
+//                        Toast.makeText(this,"账号格式不正确",Toast.LENGTH_SHORT).show();
+//                    }
+//                }else {
+//                    Toast.makeText(this,"账号不能为空",Toast.LENGTH_SHORT).show();
+//                }
                 break;
             case R.id.user_register:
                 ActionUtils.actionStart(this,ActivityRegister.class);
                 break;
         }
     }
+
+    private boolean validator(){
+        form =new Form();
+        Validate acount=new Validate(userAccount);
+        acount.addValidator(new NotEmptyValidator(this));
+        Validate  psd=new Validate(userPassworld);
+        psd.addValidator(new NotEmptyValidator(this));
+        form.addValidates(acount);
+        form.addValidates(psd);
+      return   form.validate();
+    }
+
+
+    @Override
+    public void onLoginSuccess() {
+     Toast.makeText(this,"登入成功",Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    public void onLoginFailed(Integer errCode) {
+     Toast.makeText(this,"登入失败",Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    public void onLogout() {
+    }
+    @Override
+    protected void onDestroy() {
+        FunSupport.getInstance().removeOnFunLoginListener(this);
+        super.onDestroy();
+    }
+
+
+
 
 }

@@ -31,8 +31,6 @@ public class ActivityContact extends BaseActivity {
     protected void bindEvent() {
 
     }
-
-
     @OnClick(R.id.iv_contactback)
     public void onViewClicked() {
         this.finish();

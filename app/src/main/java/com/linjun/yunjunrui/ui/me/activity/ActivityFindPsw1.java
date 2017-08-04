@@ -7,9 +7,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.lib.funsdk.support.FunSupport;
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
+import com.linjun.yunjunrui.ui.login.activity.ActivityLogin;
+import com.linjun.yunjunrui.utils.ActionUtils;
 import com.linjun.yunjunrui.view.EditTextWithDeleteButton;
 
 import butterknife.BindView;
@@ -37,6 +41,14 @@ public class ActivityFindPsw1 extends BaseActivity {
     TextView getAuthCode;
     @BindView(R.id.btn_next)
     Button btnNext;
+    @BindView(R.id.iv_tel)
+    ImageView ivTel;
+    @BindView(R.id.iv_email)
+    ImageView ivEmail;
+    @BindView(R.id.ed_psd)
+    EditTextWithDeleteButton edPsd;
+    private String username;
+    private boolean isEmail = false;
 
     @Override
     protected int getLayoutId() {
@@ -45,6 +57,8 @@ public class ActivityFindPsw1 extends BaseActivity {
 
     @Override
     protected void initView() {
+        Bundle data = this.getIntent().getExtras();
+        username = data.getString("username");
 
     }
 
@@ -60,18 +74,62 @@ public class ActivityFindPsw1 extends BaseActivity {
                 this.finish();
                 break;
             case R.id.r_tel:
+                isEmail = false;
+                showtrue(false);
                 break;
             case R.id.r_email:
+                isEmail = true;
+                showtrue(isEmail);
                 break;
             case R.id.get_auth_code:
+                getCode(isEmail);
                 break;
             case R.id.btn_next:
+                changepsd(isEmail);
                 break;
         }
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         finish();
     }
+
+    private void showtrue(boolean isEmail) {
+        if (isEmail) {
+            ivTel.setVisibility(View.GONE);
+            ivEmail.setVisibility(View.VISIBLE);
+        } else {
+            ivTel.setVisibility(View.VISIBLE);
+            ivEmail.setVisibility(View.GONE);
+        }
+    }
+
+    private void getCode(boolean isEmail) {
+        if (isEmail) {
+            String mail = username;
+            FunSupport.getInstance().requestSendEmailCodeForResetPW(mail);
+        } else {
+            String tel=username;
+            FunSupport.getInstance().requestSendPhoneMsgForResetPW(tel);
+        }
+    }
+  private  void changepsd(boolean isEmail){
+      if (isEmail){
+         if ( FunSupport.getInstance().requestResetPasswByEmail(username,edPsd.getText().toString().trim())){
+             ActionUtils.actionStart(this, ActivityLogin.class);
+         }else {
+             Toast.makeText(this,"修改失败",Toast.LENGTH_SHORT).show();
+         }
+
+      }else {
+            if ( FunSupport.getInstance().requestResetPasswByPhone(username,edPsd.getText().toString().trim())){
+                ActionUtils.actionStart(this,ActivityLogin.class);
+            }else {
+                Toast.makeText(this,"修改失败",Toast.LENGTH_SHORT).show();
+            }
+      }
+  }
+
 }

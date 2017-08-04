@@ -62,6 +62,8 @@
                 android:textSize="20sp"
                 android:textColor="@color/text"/>
             <ImageView
+                android:id="@+id/iv_tel"
+                android:visibility="visible"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_alignParentRight="true"
@@ -90,6 +92,8 @@
                 android:textSize="20sp"
                 android:textColor="@color/text"/>
             <ImageView
+                android:id="@+id/iv_email"
+                android:visibility="gone"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_alignParentRight="true"
@@ -122,6 +126,12 @@
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
+        <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+            android:hint="密码"
+            android:id="@+id/ed_psd"
+            android:background="@drawable/editshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btn_next"
             android:layout_marginRight="10dp"

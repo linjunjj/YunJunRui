@@ -181,6 +181,7 @@ public class FunSupport implements IFunSDKResult {
 		// 库初始化2
 		FunSDK.MyInitNetSDK();
 
+
 		// 设置临时文件保存路径
 		FunSDK.SetFunStrAttr(EFUN_ATTR.APP_PATH, FunPath.getDefaultPath());
         // 设置设备更新文件保存路径

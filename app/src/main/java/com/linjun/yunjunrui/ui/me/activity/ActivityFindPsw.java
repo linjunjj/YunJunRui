@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.lib.funsdk.support.FunSupport;
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
 import com.linjun.yunjunrui.utils.ActionUtils;
@@ -55,8 +57,16 @@ public class ActivityFindPsw extends BaseActivity {
                 this.finish();
                 break;
             case R.id.btn_next:
-                ActionUtils.actionStart(this,ActivityFindPsw1.class);
+                String suername=edAcount.getText().toString().trim();
+                  boolean isregister= FunSupport.getInstance().checkUserName(suername);
+                if (isregister){
+                Bundle data=new Bundle();
+                data.putString("username",suername);
+                ActionUtils.actionStart(this,ActivityFindPsw1.class,data);
                 break;
+                }else {
+                    Toast.makeText(this,"用户还有注册",Toast.LENGTH_SHORT).show();
+                }
         }
     }
     @Override

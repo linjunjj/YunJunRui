@@ -53,15 +53,16 @@ public class EditTextWithDeleteButton extends EditText {
                 setDrawable();
             }
         });
-        setDrawable();
+        //setDrawable();
     }
 
     //设置删除图片
     private void setDrawable() {
-        if(length() < 1)
-            setCompoundDrawablesWithIntrinsicBounds(null, null, imgInable, null);
-        else
-            setCompoundDrawablesWithIntrinsicBounds(null, null, imgAble, null);
+        if(length() < 1){
+           setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+            }
+        else{
+            setCompoundDrawablesWithIntrinsicBounds(null, null, imgAble, null);}
     }
 
     // 处理删除事件

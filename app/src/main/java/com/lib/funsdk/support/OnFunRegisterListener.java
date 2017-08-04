@@ -4,7 +4,7 @@ public interface OnFunRegisterListener extends OnFunListener {
 
 	// 请求发送验证码成功
 	void onRequestSendCodeSuccess();
-	
+
 	// 请求发送验证码失败
 	void onRequestSendCodeFailed(final Integer errCode);
 	

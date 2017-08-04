@@ -28,9 +28,21 @@
             android:textColor="@color/textColor1"
             android:textSize="20sp" />
         <TextView
+            android:visibility="visible"
             android:text="通过邮箱注册"
             android:layout_marginRight="10dp"
-            android:id="@+id/tv_device_name"
+            android:id="@+id/tv_Emial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="right"
+            android:textColor="@color/button_sure"
+            android:textSize="16sp" />
+        <TextView
+            android:visibility="gone"
+            android:text="通过手机注册"
+            android:layout_marginRight="10dp"
+            android:id="@+id/tv_Tel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -47,7 +59,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp" />
     <LinearLayout
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:id="@+id/header"
@@ -94,6 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
+                android:gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_gravity="center"
                 android:textColor="@color/button_sure"
@@ -102,7 +115,7 @@
                 android:textSize="15sp"
                 android:id="@+id/get_auth_code"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
         <View
@@ -122,7 +135,7 @@
 
 
     <LinearLayout
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:id="@+id/header2"

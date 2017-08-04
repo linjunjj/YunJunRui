@@ -1,6 +1,5 @@
 package com.linjun.yunjunrui.ui.me.activity;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,7 +10,6 @@ import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -52,7 +50,7 @@ public class ActivityAddAcount extends BaseActivity {
         switch (view.getId()) {
             case R.id.iv_addacountback:
                   this.finish();
-                break;
+                   break;
             case R.id.rbtnremeber:
                 break;
             case R.id.tv_forget:
