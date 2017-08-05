@@ -3,6 +3,7 @@ package com.linjun.yunjunrui.ui.login.activity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -15,6 +16,7 @@ import com.lib.funsdk.support.OnFunLoginListener;
 import com.lib.funsdk.support.models.FunLoginType;
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
+import com.linjun.yunjunrui.ui.main.MainActivity;
 import com.linjun.yunjunrui.utils.ActionUtils;
 import com.linjun.yunjunrui.utils.ValidationUtil;
 import com.linjun.yunjunrui.view.EditTextWithDeleteButton;
@@ -47,7 +49,7 @@ public class ActivityLogin extends BaseActivity implements OnFunLoginListener {
     @BindView(R.id.header)
     LinearLayout header;
     @BindView(R.id.rbtn_remeber)
-    RadioButton rbtnRemeber;
+    CheckBox rbtnRemeber;
     @BindView(R.id.bowwn)
     RelativeLayout bowwn;
     @BindView(R.id.btn_login)
@@ -96,12 +98,12 @@ private void  tryLogin(){
                 this.finish();
                 break;
             case R.id.rbtn_remeber:
-                if (isCheck){
-                rbtnRemeber.setChecked(false);
-                    isCheck=false;
-                }else {
-                    rbtnRemeber.setChecked(true);
+                if (rbtnRemeber.isChecked()){
+                //rbtnRemeber.setChecked(false);
                     isCheck=true;
+                }else {
+                   // rbtnRemeber.setChecked(true);
+                    isCheck=false;
                 }
                 break;
             case R.id.btn_login:
@@ -142,6 +144,7 @@ private void  tryLogin(){
     @Override
     public void onLoginSuccess() {
      Toast.makeText(this,"登入成功",Toast.LENGTH_SHORT).show();
+        ActionUtils.actionStart(this, MainActivity.class);
     }
     @Override
     public void onLoginFailed(Integer errCode) {

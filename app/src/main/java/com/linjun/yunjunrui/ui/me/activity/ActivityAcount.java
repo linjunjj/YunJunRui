@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.lib.funsdk.support.FunSupport;
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
+import com.linjun.yunjunrui.ui.login.activity.ActivityLogin;
 import com.linjun.yunjunrui.utils.ActionUtils;
 
 import butterknife.BindView;
@@ -57,7 +59,8 @@ public class ActivityAcount extends BaseActivity {
                 this.finish();
                 break;
             case R.id.iv_logout:
-
+            ActionUtils.actionStart(this, ActivityLogin.class);
+                FunSupport.getInstance().logout();
                 break;
             case R.id.btn_add:
                 ActionUtils.actionStart(this,ActivityAddAcount.class);

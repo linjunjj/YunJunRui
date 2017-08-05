@@ -76,7 +76,6 @@ public class ActivityChangPsd extends BaseActivity {
                 }else {
                     Toast.makeText(this,"旧密码不正确",Toast.LENGTH_SHORT).show();
                 }
-
                 break;
 
         }

@@ -39,6 +39,7 @@
       android:layout_height="wrap_content">
       <com.linjun.yunjunrui.view.EditTextWithDeleteButton
           android:hint="请输入账号"
+          android:id="@+id/add_account"
           android:layout_marginBottom="5dp"
           android:background="@drawable/editshape"
           android:layout_width="match_parent"
@@ -50,6 +51,7 @@
       <com.linjun.yunjunrui.view.EditTextWithDeleteButton
           android:layout_marginTop="5dp"
           android:hint="请输入密码"
+          android:id="@+id/add_passworld"
           android:inputType="textPassword"
           android:background="@drawable/editshape"
           android:layout_width="match_parent"
@@ -63,11 +65,13 @@
    android:layout_marginLeft="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <RadioButton
+    <CheckBox
         android:layout_centerVertical="true"
         android:button="@null"
         android:background="@drawable/rbtn_selester"
         android:textSize="9sp"
+        android:clickable="true"
+        android:checked="true"
         android:id="@+id/rbtnremeber"
         android:textColor="@color/tbreak"
         android:layout_width="20dp"

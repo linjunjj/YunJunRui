@@ -79,7 +79,7 @@
         android:layout_marginLeft="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <RadioButton
+        <CheckBox
             android:layout_centerVertical="true"
             android:button="@null"
             android:background="@drawable/rbtn_selester"

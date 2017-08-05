@@ -3,12 +3,14 @@ package com.linjun.yunjunrui.ui.me.fragment;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseFragment;
 import com.linjun.yunjunrui.ui.me.activity.ActivityAbout;
 import com.linjun.yunjunrui.ui.me.activity.ActivityAcount;
 import com.linjun.yunjunrui.ui.me.activity.ActivityChangPsd;
+import com.linjun.yunjunrui.ui.me.activity.ActivityCheck;
 import com.linjun.yunjunrui.utils.ActionUtils;
 import com.linjun.yunjunrui.view.WareView;
 
@@ -18,10 +20,11 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
  * 作用：我的操作类
  */
 public class MeFragment extends BaseFragment implements View.OnClickListener {
-    private RelativeLayout about,share,account,changepsd;
+    private RelativeLayout about,share,account,changepsd,check,change;
     private View view;
     private OnekeyShare mOks;
     private WareView wareView;
+    private ImageView changeimage;
     @Override
     public void requestData() {
         mCurState = STATE_SUCCESS;
@@ -39,6 +42,11 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
           account=view.findViewById(R.id.r_useracount);
            wareView=view.findViewById(R.id.wareview);
         changepsd=view.findViewById(R.id.r_change_psw);
+        check=view.findViewById(R.id.r_check);
+        changeimage=view.findViewById(R.id.ci_usericon);
+        change=view.findViewById(R.id.r_user_icon);
+        change.setOnClickListener(this);
+          check.setOnClickListener(this);
          changepsd.setOnClickListener(this);
           about.setOnClickListener(this);
           share.setOnClickListener(this);
@@ -82,6 +90,13 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.r_change_psw:
                 ActionUtils.actionStart(getActivity(), ActivityChangPsd.class);
                   break;
+            case R.id.r_check:
+                ActionUtils.actionStart(getActivity(), ActivityCheck.class);
+                break;
+            case R.id.r_user_icon:
+                break;
         }
     }
+
+
 }
