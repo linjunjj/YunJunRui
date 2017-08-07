@@ -22,7 +22,6 @@ public class GsmAdapter extends RecyclerView.Adapter<GsmAdapter.ViewHolder> impl
     private List<Gsmbean> list;
     public GsmAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
-
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

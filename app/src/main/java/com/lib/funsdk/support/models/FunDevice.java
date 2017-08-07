@@ -27,7 +27,6 @@ public class FunDevice {
 	public String loginPsw;		// 设备登录密码
 	public FunDevType devType;	// 设备类型
 	public int tcpPort;
-	
 	public SDK_ChannelNameConfigAll channel;
 	public int CurrChannel = 0;		//当前播放通道号,默认为零
 	
@@ -46,7 +45,6 @@ public class FunDevice {
     private boolean mHasLogin = false;
     // 是否已验证funDevice密码的正确性
     private boolean servicepsd = false;
-    
     // 保存设备连接状态, 记录的是：EUIMSG.DEV_ON_RECONNECT和EUIMSG.DEV_ON_DISCONNECT
     private boolean mHasConnected = false;	
 	
@@ -70,7 +68,6 @@ public class FunDevice {
 		this.isRemote = true;
 		this.devStatus = FunDevStatus.STATUS_UNKNOWN;
 	}
-	
 	public void initWith(SDK_CONFIG_NET_COMMON_V2 comm) {
 		this.devSn = G.ToString(comm.st_14_sSn);
 		this.devMac = G.ToString(comm.st_13_sMac);

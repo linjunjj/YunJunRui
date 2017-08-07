@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.lib.funsdk.support.FunPath;
 import com.lib.funsdk.support.FunSupport;
+import com.linjun.yunjunrui.db.DbHelper;
 import com.linjun.yunjunrui.loader.LoaderManager;
 import com.vise.log.ViseLog;
 import com.vise.log.inner.LogcatTree;
@@ -27,7 +28,7 @@ public class Myapplication extends Application {
         initLog();
         initNet();
         initFun();
-        //DbHelper.getInstance().init(this);
+        DbHelper.getInstance().init(this);
        // LoaderManager.setLoader(new FrescoLoader());//外部定制图片加载库Fresco
         LoaderManager.getLoader().init(this);
 

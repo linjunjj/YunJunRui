@@ -28,7 +28,6 @@ public class DaoSession extends AbstractDaoSession {
     public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
             daoConfigMap) {
         super(db);
-
         usermodelDaoConfig = daoConfigMap.get(UserModelDao.class).clone();
         usermodelDaoConfig.initIdentityScope(type);
 

@@ -1,5 +1,6 @@
 package com.linjun.yunjunrui.ui.login.activity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -76,6 +77,7 @@ public class ActivityRegister extends BaseActivity implements OnFunRegisterListe
     private boolean isemail1 = false;
     private boolean top=true;
     private Form form;
+    private ProgressDialog progressDialog;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_register;
@@ -103,6 +105,11 @@ public class ActivityRegister extends BaseActivity implements OnFunRegisterListe
                 validator(isemail1);
                  if (form.validate()){
                      register(isemail1);
+                     progressDialog=new ProgressDialog(this);
+                     progressDialog.setTitle("加载中");//2.设置标题
+                     progressDialog.setMessage("正在加载中，请稍等......");//3.设置显示内容
+                     progressDialog.setCancelable(true);//4.设置可否用back键关闭对话框
+                     progressDialog.show();
                  }else {
                      Toast.makeText(this,"请填写正确内容",Toast.LENGTH_SHORT).show();
                  }
@@ -239,7 +246,7 @@ public class ActivityRegister extends BaseActivity implements OnFunRegisterListe
 
     @Override
     public void onRegisterNewUserSuccess() {
-
+        progressDialog.dismiss();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.linjun.yunjunrui.ui.me.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -10,9 +11,14 @@ import android.widget.TextView;
 
 import com.lib.funsdk.support.FunSupport;
 import com.linjun.yunjunrui.R;
+import com.linjun.yunjunrui.db.DbHelper;
+import com.linjun.yunjunrui.model.Usermodel;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
 import com.linjun.yunjunrui.ui.login.activity.ActivityLogin;
+import com.linjun.yunjunrui.ui.me.adapter.AcountApater;
 import com.linjun.yunjunrui.utils.ActionUtils;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,7 +41,9 @@ public class ActivityAcount extends BaseActivity {
     Button btnAdd;
     @BindView(R.id.list_acount)
     RecyclerView listAcount;
-
+  private AcountApater acountApater;
+    private List<Usermodel> lists;
+    private LinearLayoutManager mLinearLayoutManager;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_accountm;
@@ -43,6 +51,11 @@ public class ActivityAcount extends BaseActivity {
 
     @Override
     protected void initView() {
+       lists= DbHelper.getInstance().user().loadAll();
+        acountApater=new AcountApater(this,  lists);
+         mLinearLayoutManager=new LinearLayoutManager(this);
+        listAcount.setLayoutManager(mLinearLayoutManager);
+        listAcount.setAdapter(acountApater);
 
     }
 

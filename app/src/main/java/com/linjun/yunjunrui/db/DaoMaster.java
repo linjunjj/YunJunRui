@@ -55,6 +55,9 @@ public class DaoMaster extends AbstractDaoMaster {
         }
     }
 
+    public DaoMaster(SQLiteDatabase db){
+        this(new StandardDatabase(db));
+    }
     public DaoMaster(Database db) {
         super(db, SCHEMA_VERSION);
         registerDaoClass(UserModelDao.class);

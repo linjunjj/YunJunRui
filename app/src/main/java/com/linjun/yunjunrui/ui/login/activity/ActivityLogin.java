@@ -1,5 +1,7 @@
 package com.linjun.yunjunrui.ui.login.activity;
 
+import android.app.ProgressDialog;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -59,6 +61,7 @@ public class ActivityLogin extends BaseActivity implements OnFunLoginListener {
     private SpCache spCache;
       private  boolean isCheck=true;
     private Form form;
+    private ProgressDialog progressDialog;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_login;
@@ -101,14 +104,21 @@ private void  tryLogin(){
                 if (rbtnRemeber.isChecked()){
                 //rbtnRemeber.setChecked(false);
                     isCheck=true;
+                    FunSupport.getInstance().setSavePasswordAfterLogin(isCheck);
                 }else {
                    // rbtnRemeber.setChecked(true);
                     isCheck=false;
+                    FunSupport.getInstance().setSavePasswordAfterLogin(isCheck);
                 }
                 break;
             case R.id.btn_login:
                     if (validator()){
                         tryLogin();
+                         progressDialog = new ProgressDialog(this);//1.创建一个ProgressDialog的实例
+                        progressDialog.setTitle("加载中");//2.设置标题
+                        progressDialog.setMessage("正在加载中，请稍等......");//3.设置显示内容
+                        progressDialog.setCancelable(true);//4.设置可否用back键关闭对话框
+                        progressDialog.show();
                     }else {
                        Toast.makeText(this,"请输入正确的数据",Toast.LENGTH_SHORT).show();
                     }
@@ -144,6 +154,7 @@ private void  tryLogin(){
     @Override
     public void onLoginSuccess() {
      Toast.makeText(this,"登入成功",Toast.LENGTH_SHORT).show();
+      progressDialog.dismiss();
         ActionUtils.actionStart(this, MainActivity.class);
     }
     @Override

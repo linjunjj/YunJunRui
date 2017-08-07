@@ -8,4 +8,5 @@
     <string name="loading_fail">加载失败，点击重试</string>
     <string name="loading_emptydata">设备为空，请点击添加设备</string>
     <string name="search">搜索你的设备</string>
+    <string name="gsm">GSM设备</string>
 </resources>

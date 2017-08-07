@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
@@ -49,6 +50,7 @@ public class ActivityIdea extends BaseActivity {
                 this.finish();
                 break;
             case R.id.btn_submit:
+                Toast.makeText(this,"提交成功",Toast.LENGTH_SHORT).show();
                 break;
         }
     }

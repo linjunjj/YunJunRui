@@ -5,10 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.linjun.yunjunrui.R;
+import com.linjun.yunjunrui.model.Usermodel;
+
+import java.util.List;
 
 /**
  * 作者：林俊 on 2017/8/5
@@ -19,9 +21,12 @@ public class AcountApater extends RecyclerView.Adapter<AcountApater.ViewHolder> 
     private LayoutInflater mInflater;
     private  RecyclerView recyclerView;
     private int mSelectedPos = -1;
-    public AcountApater(Context context) {
+    private List<Usermodel> list;
+   // private  int size;
+    public AcountApater(Context context, List list) {
         mInflater = LayoutInflater.from(context);
-
+         this.list=list;
+        //  this.size=size;
       //  this.recyclerView=recyclerView;
     }
     @Override
@@ -33,12 +38,12 @@ public class AcountApater extends RecyclerView.Adapter<AcountApater.ViewHolder> 
     }
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-      //   holder.acount.setText();
-     //    holder.tel.setText();
+         holder.acount.setText(list.get(position).getUserName());
+         holder.tel.setText(list.get(position).getUserTel());
     }
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
     @Override
     public void onClick(View view) {

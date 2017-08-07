@@ -66,4 +66,5 @@ public class ActivityAbout extends BaseActivity {
         super.onBackPressed();
         finish();
     }
+
 }

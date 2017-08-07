@@ -56,6 +56,8 @@ import com.lib.sdk.struct.SDK_SearchByTime;
 import com.lib.sdk.struct.SDK_TitleDot;
 import com.lib.sdk.struct.SInitParam;
 
+import org.json.JSONException;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -684,8 +686,13 @@ public class FunSupport implements IFunSDKResult {
 	 * 用户登录
 	 * @param username 用户名
 	 * @param password 密码
-	 * @return 返回是否成功
+	 * @return 返回是否成功\
+	 *
+	 * 这里的到了全局的用户名和密码
+	 *
 	 */
+
+
 	public boolean login(String username, String password) {
 
 		mTmpLoginUserName = username;
@@ -942,8 +949,6 @@ public class FunSupport implements IFunSDKResult {
 	    		mLoginUserName, mLoginPassword, funDevice.getId());
 		return (result == 0);
 	}
-
-
     public boolean requestDeviceAddSubDev(FunDevice funDevice, String Command, String pconfig) {
         System.out.println("zyy----------pconfig   " + pconfig.toString());
         FunSDK.DevSetConfigByJson(getHandler(), funDevice.devSn, Command, pconfig, -1, 5000, funDevice.getId());
@@ -1266,8 +1271,6 @@ public class FunSupport implements IFunSDKResult {
 		FunSDK.DevGetChnName(getHandler(), funDevice.getDevSn(), "", "", funDevice.getId());
 
 	}
-	
-	
 	/**
 	 * 设备登录(通过序列号直接登录)
 	 * @param devMac
@@ -1332,16 +1335,14 @@ public class FunSupport implements IFunSDKResult {
 		int result = FunSDK.SysGetDevState(getHandler(), getAllDeviceSns(), 0);
 		return (result == 0);
 	}
-
 	/**
-	 * 查询所有局域网内的设备在线状态
+	 *  查询所有局域网内的设备在线状态
 	 * @return
 	 */
 	public boolean requestAllLanDeviceStatus() {
 		int result = FunSDK.SysGetDevState(getHandler(), getAllLanDeviceSns(), 0);
 		return (result == 0);
 	}
-
 	/**
 	 * 获取当个设备的在线状态
 	 * @param funDevice
@@ -1511,7 +1512,6 @@ public class FunSupport implements IFunSDKResult {
 		int result = -1;
 
 		FunLog.i("test", "requestDeviceSetConfig : " + funDevice.getId());
-
 		if (parmObj instanceof BaseConfig) {
 			BaseConfig baseConfig = (BaseConfig) parmObj;
 			result = FunSDK.DevSetConfigByJson(getHandler(), 
@@ -2399,7 +2399,11 @@ public class FunSupport implements IFunSDKResult {
 				// 获取用户信息成功,将返回用户信息传回到回调方法
 				for (OnFunListener l : mListeners) {
 					if (l instanceof OnFunGetUserInfoListener) {
-						((OnFunGetUserInfoListener) l).onGetUserInfoSuccess(msgContent.str);
+						try {
+							((OnFunGetUserInfoListener) l).onGetUserInfoSuccess(msgContent.str);
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
 					}
 				}
 			} else {

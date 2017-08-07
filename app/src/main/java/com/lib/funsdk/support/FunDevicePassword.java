@@ -23,15 +23,12 @@ public class FunDevicePassword {
 		String loginName = "admin";
 		String loginPswd;
 	}
-	
 	// 使用过的WiFi密码
 	private List<DevicePassword> mSavedDevPasswds = new ArrayList<DevicePassword>();
 	
 	private FunDevicePassword() {
 		load();
 	}
-	
-	
 	public static FunDevicePassword getInstance() {
 		if ( null == mInstance ) {
 			mInstance = new FunDevicePassword();

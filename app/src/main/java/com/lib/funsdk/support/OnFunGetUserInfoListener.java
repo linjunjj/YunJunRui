@@ -1,5 +1,7 @@
 package com.lib.funsdk.support;
 
+import org.json.JSONException;
+
 /**
  * Created by Jeff on 16/4/12.
  */
@@ -9,7 +11,7 @@ public interface OnFunGetUserInfoListener extends OnFunListener {
      * 获取用户信息成功时回调该方法
      * @param strUserInfo 包含服务器返回的用户信息的字符串
      */
-    void onGetUserInfoSuccess(String strUserInfo);
+    void onGetUserInfoSuccess(String strUserInfo) throws JSONException;
 
     /**
      * 获取用户信息失败时回调该方法

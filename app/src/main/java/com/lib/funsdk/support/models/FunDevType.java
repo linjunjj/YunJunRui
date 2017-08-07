@@ -60,7 +60,12 @@ public enum FunDevType {
 	EE_DEV_SPEAKER(13, 
 			R.string.dev_type_speaker,
 			R.drawable.icon_funsdk),
-	
+	//14,GSM网络设备
+	EE_GSM_DEVICE(
+	   14,
+		R.string.gsm,
+			R.mipmap.pdevice
+	),
 	// 未知设备
 	EE_DEV_UNKNOWN(-1, 
 			R.string.dev_type_unknown,
