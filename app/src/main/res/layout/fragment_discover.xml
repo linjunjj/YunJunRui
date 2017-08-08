@@ -125,7 +125,6 @@
             android:layout_marginTop="4dp"
             android:layout_toRightOf="@+id/lodo"
             android:text="优惠活动"
-            android:textColor="#49449"
             android:textSize="15sp"
             android:textStyle="normal" />
 

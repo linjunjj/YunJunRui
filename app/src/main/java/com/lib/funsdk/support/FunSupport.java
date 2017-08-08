@@ -1974,6 +1974,7 @@ public class FunSupport implements IFunSDKResult {
 	}
 
 	/**
+	/**
 	 * 获取当前附近的AP设备列表
 	 * @return AP设备列表
 	 */

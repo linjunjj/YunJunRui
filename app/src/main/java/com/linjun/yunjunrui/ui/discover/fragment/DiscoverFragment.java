@@ -1,9 +1,12 @@
 package com.linjun.yunjunrui.ui.discover.fragment;
 
 import android.content.Context;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
 
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseFragment;
@@ -18,10 +21,11 @@ import java.util.List;
  * 作者：林俊 on 2017/7/27
  * 作用：发现操作类
  */
-public class DiscoverFragment extends BaseFragment {
+public class DiscoverFragment extends BaseFragment implements View.OnClickListener {
     public static final int []RES = new int[]{R.drawable.image1,R.drawable.image2,R.drawable.image3,R.drawable.image4,R.drawable.image6,R.drawable.image7,R.drawable.image8};
     private  View view;
     private MZBannerView banan;
+    private RelativeLayout Scan;
     @Override
     public void requestData() {
       mCurState=STATE_SUCCESS;
@@ -35,6 +39,8 @@ public class DiscoverFragment extends BaseFragment {
     }
   private  void init(){
       banan=view.findViewById(R.id.banner);
+       Scan=view.findViewById(R.id.r_lanSan);
+      Scan.setOnClickListener(this);
       setBan();
   }
   private  void setBan(){
@@ -50,6 +56,16 @@ public class DiscoverFragment extends BaseFragment {
           }
       });
   }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.r_lanSan:
+
+                break;
+        }
+    }
+
     public static class BannerViewHolder implements MZViewHolder<Integer> {
         private ImageView mImageView;
         @Override
