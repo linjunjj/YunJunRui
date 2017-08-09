@@ -115,10 +115,6 @@ private  boolean validator(){
 
 
 
-
-
-
-
     private void initdata() {
         funDevice=null;
         if (null==funDevice){
@@ -134,7 +130,11 @@ private  boolean validator(){
        FunSupport.getInstance().requestDeviceLogin(funDevice);
     }
 
-
+    private  void requestDeviceAdd(){
+        if (null!=funDevice){
+            FunSupport.getInstance().requestDeviceAdd(funDevice);
+        }
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -154,7 +154,7 @@ private  boolean validator(){
 
     @Override
     public void onDeviceAddedSuccess() {
-
+        requestDeviceAdd();
     }
 
     @Override

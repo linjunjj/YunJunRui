@@ -7,9 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.lib.funsdk.support.models.FunDevice;
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.device.bean.Gsmbean;
 import com.linjun.yunjunrui.ui.device.fragment.GsmFragment;
+import com.linjun.yunjunrui.view.SlidingButtonView;
 
 import java.util.List;
 
@@ -17,25 +19,29 @@ import java.util.List;
  * 作者：林俊 on 2017/8/2
  * 作用：
  */
-public class GsmAdapter extends RecyclerView.Adapter<GsmAdapter.ViewHolder> implements View.OnClickListener {
+public class GsmAdapter extends RecyclerView.Adapter<GsmAdapter.ViewHolder> implements View.OnClickListener,SlidingButtonView.IonSlidingButtonListener {
     private LayoutInflater mInflater;
-    private List<Gsmbean> list;
-    public GsmAdapter(Context context) {
+    private List<FunDevice> list;
+    private  SlidingButtonView mMenu=null;
+    public GsmAdapter(Context context,List<FunDevice> list) {
         mInflater = LayoutInflater.from(context);
+       this.list=list;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view=mInflater.inflate(R.layout.item_video_device,parent,false);
         ViewHolder viewHolder=new ViewHolder(view);
-        return viewHolder ;
+        return viewHolder;
     }
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        holder.remark.setText(list.get(position).devSn);
+       holder.videoname.setText(list.get(position).devName);
+        holder.time.setText(list.get(position).devIp);
     }
     @Override
     public int getItemCount() {
-        return 7;
+        return list.size();
     }
 
     @Override
@@ -45,6 +51,33 @@ public class GsmAdapter extends RecyclerView.Adapter<GsmAdapter.ViewHolder> impl
         }
     }
 
+    @Override
+    public void onMenuIsOpen(View view) {
+   mMenu= (SlidingButtonView) view;
+    }
+    @Override
+    public void onDownOrMove(SlidingButtonView slidingButtonView) {
+    if (menuIsOpen()){
+        if (mMenu!=slidingButtonView){
+            closeMenu();
+        }
+    }
+    }
+    public void closeMenu() {
+        mMenu.closeMenu();
+        mMenu = null;
+
+    }
+    /**
+     * ÅÐ¶ÏÊÇ·ñÓÐ²Ëµ¥´ò¿ª
+     */
+    public Boolean menuIsOpen() {
+        if(mMenu != null){
+            return true;
+        }
+
+        return false;
+    }
     class  ViewHolder extends RecyclerView.ViewHolder {
         TextView videoname,time,remark;
         public  ViewHolder(View itemView) {

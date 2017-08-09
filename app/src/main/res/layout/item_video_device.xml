@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.linjun.yunjunrui.view.SlidingButtonView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/white"
     android:layout_marginBottom="2dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-<android.support.v7.widget.CardView
+    android:layout_height="80dp">
+<RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
     <RelativeLayout
+        android:id="@+id/layout_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
@@ -73,5 +74,16 @@
                 android:src="@mipmap/xinhao" />
         </LinearLayout>
     </RelativeLayout>
-</android.support.v7.widget.CardView>
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_delete"
+        android:layout_height="80dp"
+        android:layout_width="80dp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/layout_content"
+        android:text="删 除"
+        android:background="#EE7976"
+        android:textColor="#DDFFFFFF"
+        />
+</RelativeLayout>
+</com.linjun.yunjunrui.view.SlidingButtonView>

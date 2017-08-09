@@ -42,7 +42,7 @@
         android:layout_height="wrap_content">
 
         <com.linjun.yunjunrui.view.EditTextWithDeleteButton
-            android:hint="设备的UID"
+            android:hint="设备的名称"
             android:id="@+id/ed_name"
             android:background="@drawable/editshape"
             android:layout_width="match_parent"
@@ -51,6 +51,21 @@
             android:layout_marginTop="6dp"
             android:hint="设备序列号"
             android:id="@+id/ed_number"
+            android:background="@drawable/editshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+            android:layout_marginTop="6dp"
+            android:hint="设备MAC"
+            android:id="@+id/ed_mac_video"
+            android:background="@drawable/editshape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.linjun.yunjunrui.view.EditTextWithDeleteButton
+            android:layout_marginTop="6dp"
+            android:hint="设备IP"
+            android:id="@+id/ed_ip_video"
             android:background="@drawable/editshape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
