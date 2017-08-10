@@ -55,6 +55,7 @@ import com.lib.sdk.struct.SDK_ChannelNameConfigAll;
 import com.lib.sdk.struct.SDK_SearchByTime;
 import com.lib.sdk.struct.SDK_TitleDot;
 import com.lib.sdk.struct.SInitParam;
+import com.linjun.yunjunrui.ui.device.fragment.VideoFragment;
 
 import org.json.JSONException;
 
@@ -126,7 +127,9 @@ public class FunSupport implements IFunSDKResult {
 	private final int MESSAGE_GET_DEVICE_CONFIG = 0x1001;
 	private final int MESSAGE_GET_DEVICE_CONFIG_TIMEOUT = 0x1002;
 
-	private class DeviceGetConfig {
+
+
+    private class DeviceGetConfig {
 		FunDevice funDevice;
 		String configName;
 		int channelNo = -1;

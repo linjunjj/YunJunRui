@@ -2,13 +2,19 @@ package com.linjun.yunjunrui.ui.device.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.linjun.yunjunrui.R;
+import com.linjun.yunjunrui.eventbus.MessageCode;
 import com.linjun.yunjunrui.ui.base.BaseActivity;
 import com.linjun.yunjunrui.utils.ActionUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +35,8 @@ public class ActivityConType extends BaseActivity {
     LinearLayout localCon;
     @BindView(R.id.inten_con)
     LinearLayout intenCon;
+    private MessageCode messageCode;
+    private  int i;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_type;
@@ -36,7 +44,7 @@ public class ActivityConType extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -57,8 +65,28 @@ public class ActivityConType extends BaseActivity {
             case R.id.local_con:
                 break;
             case R.id.inten_con:
-                ActionUtils.actionStart(this,ActivityAddGsm.class);
+                if (i!=0){
+                    ActionUtils.actionStart(this,ActivityAddGsm.class);
+                }else {
+                    ActionUtils.actionStart(this,ActivityAddVideo.class);
+                }
+
                 break;
         }
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(MessageCode code) {
+        try {
+             i = code.isPage;
+
+        } catch (Exception e) {
+
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

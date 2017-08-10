@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.lib.funsdk.support.models.FunDevice;
 import com.linjun.yunjunrui.R;
-import com.linjun.yunjunrui.ui.device.bean.Gsmbean;
-import com.linjun.yunjunrui.ui.device.fragment.GsmFragment;
 import com.linjun.yunjunrui.view.SlidingButtonView;
 
 import java.util.List;
@@ -50,7 +48,6 @@ public class GsmAdapter extends RecyclerView.Adapter<GsmAdapter.ViewHolder> impl
             onItemClickListener.onItemClick(view, (Integer) view.getTag());
         }
     }
-
     @Override
     public void onMenuIsOpen(View view) {
    mMenu= (SlidingButtonView) view;
@@ -69,7 +66,6 @@ public class GsmAdapter extends RecyclerView.Adapter<GsmAdapter.ViewHolder> impl
 
     }
     /**
-     * ÅÐ¶ÏÊÇ·ñÓÐ²Ëµ¥´ò¿ª
      */
     public Boolean menuIsOpen() {
         if(mMenu != null){

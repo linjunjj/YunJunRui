@@ -12,6 +12,7 @@ import com.lib.MsgContent;
 import com.lib.funsdk.support.FunSupport;
 import com.lib.funsdk.support.OnAddSubDeviceResultListener;
 import com.lib.funsdk.support.OnFunDeviceListener;
+import com.lib.funsdk.support.models.FunDevType;
 import com.lib.funsdk.support.models.FunDevice;
 import com.linjun.yunjunrui.R;
 import com.linjun.yunjunrui.ui.base.BaseFragment;
@@ -32,8 +33,8 @@ public class GsmFragment extends BaseFragment implements OnFunDeviceListener, On
     private GsmAdapter gsmAdapter;
     private LinearLayoutManager mLinearLayoutManager;
     private List<FunDevice> list=new ArrayList<>();
+    private  List<FunDevice> gsmlist=new ArrayList<>();
     private final int MESSAGE_REFRESH_DEVICE_STATUS = 0x100;
-
     // 设备状态刷新时间间隔,目前为3分钟
     private static final int INTERVAL_REFRESH_DEV_STATUS = 3 * 60 * 1000;
     @Override
@@ -57,14 +58,13 @@ public class GsmFragment extends BaseFragment implements OnFunDeviceListener, On
     private void  initview(){
         mLinearLayoutManager=new LinearLayoutManager(getActivity());
         requestToGetDeviceList();
-
         refresh.setOnRefreshListener(new RecyclerRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 requestToGetDeviceList();
             }
         });
-        gsmAdapter=new GsmAdapter(getActivity(),list);
+        gsmAdapter=new GsmAdapter(getActivity(),gsmlist);
         recyclerView.setLayoutManager(mLinearLayoutManager);
         recyclerView.setAdapter(gsmAdapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.HORIZONTAL_LIST));
@@ -74,6 +74,13 @@ public class GsmFragment extends BaseFragment implements OnFunDeviceListener, On
     private void refreshDeviceList() {
         list.clear();
         list.addAll(FunSupport.getInstance().getDeviceList());
+        list.addAll(FunSupport.getInstance().getAPDeviceList());
+        for (int i = 0; i <list.size() ; i++) {
+            if (list.get(i).devType==FunDevType.EE_GSM_DEVICE){
+                gsmlist.add(list.get(i));
+            }
+        }
+
         gsmAdapter.notifyDataSetChanged();
    if (list.size()>0){
        mHandler.sendEmptyMessageDelayed(MESSAGE_REFRESH_DEVICE_STATUS, 100);

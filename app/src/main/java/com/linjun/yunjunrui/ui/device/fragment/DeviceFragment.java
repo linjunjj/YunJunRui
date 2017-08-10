@@ -20,6 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.linjun.yunjunrui.R;
+import com.linjun.yunjunrui.eventbus.MessageCode;
 import com.linjun.yunjunrui.ui.base.BaseFragment;
 import com.linjun.yunjunrui.ui.device.activity.ActivityAddGsm;
 import com.linjun.yunjunrui.ui.device.activity.ActivityAddVideo;
@@ -29,6 +30,8 @@ import com.linjun.yunjunrui.ui.device.entry.MenuItems;
 import com.linjun.yunjunrui.ui.device.entry.TopRightMenu;
 import com.linjun.yunjunrui.utils.ActionUtils;
 import com.linjun.yunjunrui.utils.UnitConvert;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +59,7 @@ public class DeviceFragment extends BaseFragment implements View.OnClickListener
     public void showPage() {
         view=View.inflate(getActivity(),R.layout.fragment_device,null);
         init();
-
+        EventBus.getDefault().register(this);
         fragments = new ArrayList<>();
         fragments.add(new GsmFragment());
         fragments.add(new VideoFragment());
@@ -69,9 +72,11 @@ public class DeviceFragment extends BaseFragment implements View.OnClickListener
                 switch (i) {
                     case R.id.rb_video:
                         vp.setCurrentItem(0);
+                        EventBus.getDefault().post(new MessageCode(0));
                         break;
                     case R.id.rb_gsm:
                         vp.setCurrentItem(1);
+                        EventBus.getDefault().post(new MessageCode(1));
                         break;
                 }
             }
@@ -163,5 +168,11 @@ public class DeviceFragment extends BaseFragment implements View.OnClickListener
         public void onPageScrollStateChanged(int i) {
 
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }
